@@ -1,12 +1,15 @@
-import './index.css'
+import React from 'react'
 
-const DenominationItem = props => {
-  const {eachValue} = props
-  const {value} = eachValue
-
+const DenominationItem = ({eachValue, onDenominationClick, value}) => {
+  // Destructure value directly (if passed)
   return (
     <li className="list-Container">
-      <button className="btn-element">{value}</button>
+      <button
+        className="btn-element"
+        onClick={() => onDenominationClick(value)} // Use the passed value
+      >
+        {value}
+      </button>
     </li>
   )
 }
