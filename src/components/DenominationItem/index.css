@@ -1,0 +1,22 @@
+/* Write your CSS here */
+.list-Container {
+  margin: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .list-Container {
+    display: flex;
+  }
+}
+
+.btn-element {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 300;
+}
+@media screen and (min-width: 768px) {
+  .btn-element {
+    width: 40%;
+  }
+}

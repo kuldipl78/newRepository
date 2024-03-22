@@ -1,0 +1,96 @@
+.main-Continer {
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .main-Continer {
+    flex-direction: column;
+  }
+}
+
+.withDraw-Container {
+  width: 60%;
+  border-radius: 15px;
+  background-color: darkslateblue;
+}
+
+@media screen and (min-width: 768px) {
+  .withDraw-Container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.head-Container {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.headName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 50%;
+  margin: 20px;
+  height: 60px;
+  width: 60px;
+  background-color: lightblue;
+  color: rgb(85, 116, 210);
+  padding: 10px;
+}
+
+.name {
+  margin-top: 40px;
+  color: aliceblue;
+}
+
+.balance-container {
+  color: burlywood;
+  margin: 10px;
+  padding: 20px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.total-Amount {
+  font-size: 45;
+  font-weight: 700;
+}
+
+.amount-In-Rupees {
+  color: burlywood;
+}
+.balance-section {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.cashWithDrow-Container {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  color: aliceblue;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 30px;
+  font-weight: 200px;
+}
+
+.description {
+  color: burlywood;
+}
