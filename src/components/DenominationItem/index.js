@@ -1,12 +1,19 @@
-import React from 'react'
+import './index.css'
 
-const DenominationItem = ({onDenominationClick, value}) => {
-  
+const DenominationItem = props => {
+  const {denominationDetails, updateBalance} = props
+  const {value} = denominationDetails
+
+  const onClickDenomination = () => {
+    updateBalance(value)
+  }
+
   return (
-    <li className="list-Container">
+    <li className="denomination-item">
       <button
-        className="btn-element"
-        onClick={() => onDenominationClick(value)}
+        type="button"
+        className="denomination-button"
+        onClick={onClickDenomination}
       >
         {value}
       </button>
