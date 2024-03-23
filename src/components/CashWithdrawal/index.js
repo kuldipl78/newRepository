@@ -5,16 +5,18 @@ import {Component} from 'react'
 import DenominationItem from '../DenominationItem'
 
 class CashWithdrawal extends Component {
-  state = {totalValue: 0}
+  state = {totalValue: 2000}
 
   onDenominationClick = value => {
+    console.log(value)
     this.setState(prevState => ({
-      totalValue: prevState.totalValue + value,
+      totalValue: prevState.totalValue - value,
     }))
   }
 
   render() {
-    const {withdrowAmout} = this.props
+    const {denominationsList} = this.props
+    const {totalValue} = this.state
     return (
       <div className="main-Continer">
         <div className="withDraw-Container">
@@ -25,12 +27,12 @@ class CashWithdrawal extends Component {
           <div className="balance-container">
             <p>Your Balance</p>
             <div className="balance-section">
-              <p className="total-Amount">{withdrowAmout}</p>
+              <p className="total-Amount">{totalValue}</p>
               <p className="amount-In-Rupees"> In Rupees </p>
             </div>
           </div>
           <div className="cashWithDrow-Container">
-            <h1 className="heading"> Withdraw </h1>
+            <p className="heading"> Withdraw </p>
             <p className="description"> CHOOSE SUM (IN RUPEES)</p>
           </div>
           <ul className="values-Continer">
