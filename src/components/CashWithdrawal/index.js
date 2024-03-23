@@ -1,46 +1,49 @@
-import './index.css'
-
 import {Component} from 'react'
 
 import DenominationItem from '../DenominationItem'
 
-class CashWithdrawal extends Component {
-  state = {totalValue: 2000}
+import './index.css'
 
-  onDenominationClick = value => {
-    console.log(value)
-    this.setState(prevState => ({
-      totalValue: prevState.totalValue - value,
-    }))
+class CashWithdrawal extends Component {
+  state = {
+    balance: 2000,
+  }
+
+  updateBalance = value => {
+    this.setState(prevState => ({balance: prevState.balance - value}))
   }
 
   render() {
     const {denominationsList} = this.props
-    const {totalValue} = this.state
+    const {balance} = this.state
+    const name = 'Sarah Williams'
+    const initial = name.slice(0, 1)
+
     return (
-      <div className="main-Continer">
-        <div className="withDraw-Container">
-          <div className="head-Container">
-            <h1 className="headName"> S</h1>
-            <p className="name"> Sarah Williams </p>
+      <div className="app-container">
+        <div className="cash-withdrawal-container">
+          <div className="user-details-container">
+            <div className="initial-container">
+              <p className="initial">{initial}</p>
+            </div>
+            <p className="name">{name}</p>
           </div>
           <div className="balance-container">
-            <p>Your Balance</p>
-            <div className="balance-section">
-              <p className="total-Amount">{totalValue}</p>
-              <p className="amount-In-Rupees"> In Rupees </p>
-            </div>
+            <p className="your-balance">Your Balance</p>
+            <p className="balance">
+              {balance}
+              <br />
+              <span className="currency">In Rupees</span>
+            </p>
           </div>
-          <div className="cashWithDrow-Container">
-            <p className="heading"> Withdraw </p>
-            <p className="description"> CHOOSE SUM (IN RUPEES)</p>
-          </div>
-          <ul className="values-Continer">
-            {this.props.denominationsList.map(eachValue => (
+          <p className="withdraw">Withdraw</p>
+          <p className="choose-sum">CHOOSE SUM (IN RUPEES)</p>
+          <ul className="denominations-list">
+            {denominationsList.map(eachDenomination => (
               <DenominationItem
-                key={eachValue.id}
-                onDenominationClick={this.onDenominationClick}
-                value={eachValue.value}
+                key={eachDenomination.id}
+                denominationDetails={eachDenomination}
+                updateBalance={this.updateBalance}
               />
             ))}
           </ul>
