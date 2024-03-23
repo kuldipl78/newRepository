@@ -1,12 +1,12 @@
 import React from 'react'
 
-const DenominationItem = ({eachValue, onDenominationClick, value}) => {
-  // Destructure value directly (if passed)
+const DenominationItem = ({onDenominationClick, value}) => {
+  
   return (
     <li className="list-Container">
       <button
         className="btn-element"
-        onClick={() => onDenominationClick(value)} // Use the passed value
+        onClick={() => onDenominationClick(value)}
       >
         {value}
       </button>
